@@ -1,0 +1,50 @@
+body{
+    background-color: beige;
+}
+#login-form{
+    width: 30%;
+    background-color: rgb(233, 233, 175);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30%;
+    margin-top: 0%;
+}
+h2 ,#username, #password,#btn{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+#btn ,#username, #password{
+    margin: 20%;
+    padding: 3%;
+}
+
+#username {
+    margin-top: 20%;
+    margin-bottom: 0%;
+}
+#btn, #password{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#btn{
+    margin: 35%;
+    margin-top: 0%;
+}
+
+#logout{
+    width: 30%;
+    background-color: rgb(233, 233, 175);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30%;
+    margin-top: 0%;
+
+}
+

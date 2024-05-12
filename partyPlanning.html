@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party Invitation Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        display: flex;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 50%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .invitation-message {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<form id="guest-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter guest name">
+    <label for="age">Age:</label>
+    <input type="text" id="age" placeholder="Enter guest age">
+    <label for="rsvp">RSVP Status:</label>
+    <input type="text" id="rsvp" placeholder="Enter RSVP status">
+    <button type="button" onclick="addGuest()">Add Guest</button>
+</form>
+
+<div id="invitation-messages"></div>
+
+<script>
+    function addGuest() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const rsvp = document.getElementById('rsvp').value;
+
+        const guest = {
+            name: name,
+            age: age,
+            rsvp: rsvp
+        };
+
+        guests.push(guest);
+        generateInvitationMessages();
+        clearForm();
+    }
+
+    function generateInvitationMessages() {
+        const invitationMessages = guests.map(guest => {
+            return `Dear ${guest.name}, You are invited to the party! RSVP Status: ${guest.rsvp}`;
+        });
+
+        const invitationMessagesHTML = invitationMessages.map(message => {
+            return `<div class="invitation-message">${message}</div>`;
+        });
+
+        document.getElementById('invitation-messages').innerHTML = invitationMessagesHTML.join('');
+    }
+
+    function clearForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('rsvp').value = '';
+    }
+
+    const guests = [];
+</script>
+
+</body>
+</html>
